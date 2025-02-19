@@ -4,13 +4,29 @@ if (!process.env.MAILJET_API_KEY) {
   throw new Error("MAILJET_API_KEY environment variable must be set");
 }
 
-// Split API key into key and secret (Mailjet API key format: KEY_SECRET)
-const [apiKey, apiSecret] = process.env.MAILJET_API_KEY.split('_');
+const MAILJET_API_KEY = process.env.MAILJET_API_KEY.trim();
+console.log("Initializing Mailjet with API key length:", MAILJET_API_KEY.length);
+
+// Validate key format
+if (!MAILJET_API_KEY.includes('_')) {
+  throw new Error("MAILJET_API_KEY must be in format: API_KEY_API_SECRET (contains underscore)");
+}
+
+// Split API key into key and secret parts
+const [apiKey, apiSecret] = MAILJET_API_KEY.split('_');
+
+if (!apiKey || !apiSecret) {
+  throw new Error(`Invalid MAILJET_API_KEY format. Expected format: API_KEY_API_SECRET, got key length: ${apiKey?.length || 0}, secret length: ${apiSecret?.length || 0}`);
+}
+
+console.log(`API Key validated (length: ${apiKey.length}) and Secret parsed (length: ${apiSecret.length})`);
 
 const mailjet = new Mailjet({
-  apiKey: apiKey,
-  apiSecret: apiSecret || '' // Fallback to empty string if no secret
+  apiKey,
+  apiSecret
 });
+
+console.log("Mailjet client initialized successfully");
 
 interface EmailParams {
   to: string;
@@ -21,11 +37,13 @@ interface EmailParams {
 
 export async function sendEmail(params: EmailParams): Promise<boolean> {
   try {
+    console.log("Attempting to send email to:", params.to);
+
     const result = await mailjet.post('send', { version: 'v3.1' }).request({
       Messages: [
         {
           From: {
-            Email: "contact@example.com", // Replace with your verified sender
+            Email: "contact@example.com",
             Name: "Portfolio Contact Form"
           },
           To: [
@@ -40,6 +58,7 @@ export async function sendEmail(params: EmailParams): Promise<boolean> {
       ]
     });
 
+    console.log("Email sent successfully, status:", result.response.status);
     return result.response.status === 200;
   } catch (error) {
     console.error('Mailjet email error:', error);

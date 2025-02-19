@@ -12,23 +12,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const contact = await storage.createContact(validatedData);
 
       // Send email notification
-      await sendEmail({
-        to: "example@yourdomain.com", // TODO: Replace with your actual email where you want to receive notifications
-        subject: "New Contact Form Submission",
+      const emailResult = await sendEmail({
+        to: "test@example.com", // Using test email for verification
+        subject: "Test Email - Contact Form Submission",
         text: `
-New contact form submission:
+Test email - Contact form submission:
 
 Name: ${validatedData.name}
 Email: ${validatedData.email}
 Message: ${validatedData.message}
         `,
         html: `
-<h2>New Contact Form Submission</h2>
+<h2>Test Email - Contact Form Submission</h2>
 <p><strong>Name:</strong> ${validatedData.name}</p>
 <p><strong>Email:</strong> ${validatedData.email}</p>
 <p><strong>Message:</strong> ${validatedData.message}</p>
         `
       });
+
+      if (!emailResult) {
+        console.error('Failed to send email notification');
+        return res.status(500).json({ message: "Failed to send email notification" });
+      }
 
       res.json(contact);
     } catch (error) {
