@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Code, Palette, TrendingUp } from "lucide-react";
+import { Code, Palette, TrendingUp, Clock } from "lucide-react";
 
 const skills = [
   {
@@ -35,6 +35,17 @@ const skills = [
       "Analytics",
       "Campaign Management"
     ]
+  },
+  {
+    category: "Virtual Assistant",
+    icon: Clock,
+    skills: [
+      "Project Management",
+      "Calendar Management",
+      "Email Management",
+      "Travel Planning",
+      "Administrative Support"
+    ]
   }
 ];
 
@@ -59,7 +70,7 @@ export default function SkillsSection() {
       variants={container}
       initial="hidden"
       animate="show"
-      className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+      className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
     >
       {skills.map((category, index) => (
         <motion.div key={index} variants={item}>
