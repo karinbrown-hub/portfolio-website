@@ -1,34 +1,39 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Monitor, Palette, TrendingUp, Code } from "lucide-react";
+import { Code, Palette, TrendingUp } from "lucide-react";
 
 const skills = [
   {
     category: "Web Development",
     icon: Code,
     skills: [
-      { name: "React/Next.js", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "Node.js", level: 80 }
+      "React/Next.js",
+      "TypeScript",
+      "Node.js",
+      "REST APIs",
+      "Responsive Design"
     ]
   },
   {
     category: "Graphic Design",
     icon: Palette,
     skills: [
-      { name: "Adobe Illustrator", level: 85 },
-      { name: "Adobe Photoshop", level: 80 },
-      { name: "UI/UX Design", level: 75 }
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "UI/UX Design",
+      "Brand Identity",
+      "Visual Design"
     ]
   },
   {
     category: "Digital Marketing",
     icon: TrendingUp,
     skills: [
-      { name: "SEO", level: 75 },
-      { name: "Social Media", level: 85 },
-      { name: "Content Strategy", level: 80 }
+      "SEO Optimization",
+      "Social Media Strategy",
+      "Content Marketing",
+      "Analytics",
+      "Campaign Management"
     ]
   }
 ];
@@ -64,20 +69,18 @@ export default function SkillsSection() {
                 <category.icon className="w-6 h-6 text-primary mr-3" />
                 <h3 className="text-xl font-bold">{category.category}</h3>
               </div>
-              
-              <div className="space-y-4">
+
+              <ul className="space-y-2">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <Progress value={skill.level} className="h-2" />
-                  </div>
+                  <li 
+                    key={skillIndex}
+                    className="flex items-center text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <span className="w-2 h-2 bg-primary/40 rounded-full mr-2" />
+                    {skill}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </CardContent>
           </Card>
         </motion.div>
