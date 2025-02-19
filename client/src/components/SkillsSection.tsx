@@ -73,7 +73,7 @@ export default function SkillsSection() {
       variants={container}
       initial="hidden"
       animate="show"
-      className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+      className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full px-4"
     >
       {skills.map((category, index) => (
         <motion.div key={index} variants={item}>
