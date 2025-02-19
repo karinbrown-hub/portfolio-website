@@ -5,7 +5,9 @@ if (!process.env.MAILJET_API_KEY) {
 }
 
 const MAILJET_API_KEY = process.env.MAILJET_API_KEY.trim();
-console.log("Initializing Mailjet with API key length:", MAILJET_API_KEY.length);
+console.log("Raw API key length:", MAILJET_API_KEY.length);
+console.log("Contains underscore:", MAILJET_API_KEY.includes('_'));
+console.log("First few chars:", MAILJET_API_KEY.substring(0, 5));
 
 // Validate key format
 if (!MAILJET_API_KEY.includes('_')) {
@@ -19,7 +21,7 @@ if (!apiKey || !apiSecret) {
   throw new Error(`Invalid MAILJET_API_KEY format. Expected format: API_KEY_API_SECRET, got key length: ${apiKey?.length || 0}, secret length: ${apiSecret?.length || 0}`);
 }
 
-console.log(`API Key validated (length: ${apiKey.length}) and Secret parsed (length: ${apiSecret.length})`);
+console.log(`API Key length: ${apiKey.length}, Secret length: ${apiSecret.length}`);
 
 const mailjet = new Mailjet({
   apiKey,
