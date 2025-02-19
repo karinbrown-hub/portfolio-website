@@ -75,30 +75,33 @@ export default function SkillsSection() {
       animate="show"
       className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full px-4"
     >
-      {skills.map((category, index) => (
-        <motion.div key={index} variants={item}>
-          <Card>
-            <CardContent className="pt-6">
-              <div className="flex items-center mb-6">
-                <category.icon className="w-6 h-6 text-primary mr-3" />
-                <h3 className="text-xl font-bold">{category.category}</h3>
-              </div>
+      {skills.map((skill, index) => {
+        const Icon = skill.icon;
+        return (
+          <motion.div key={index} variants={item}>
+            <Card>
+              <CardContent className="pt-6">
+                <div className="flex items-center mb-6">
+                  <Icon className="w-6 h-6 text-primary mr-3" />
+                  <h3 className="text-xl font-bold">{skill.category}</h3>
+                </div>
 
-              <ul className="space-y-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <li 
-                    key={skillIndex}
-                    className="flex items-center text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <span className="w-2 h-2 bg-primary/40 rounded-full mr-2" />
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </motion.div>
-      ))}
+                <ul className="space-y-2">
+                  {skill.skills.map((skillItem, skillIndex) => (
+                    <li 
+                      key={skillIndex}
+                      className="flex items-center text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <span className="w-2 h-2 bg-primary/40 rounded-full mr-2" />
+                      {skillItem}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
+        );
+      })}
     </motion.div>
   );
 }
