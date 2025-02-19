@@ -3,17 +3,39 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
 import { ZodError } from "zod";
+import { sendEmail } from "./utils/mail";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = contactFormSchema.parse(req.body);
       const contact = await storage.createContact(validatedData);
+
+      // Send email notification
+      await sendEmail({
+        to: "example@yourdomain.com", // TODO: Replace with your actual email where you want to receive notifications
+        subject: "New Contact Form Submission",
+        text: `
+New contact form submission:
+
+Name: ${validatedData.name}
+Email: ${validatedData.email}
+Message: ${validatedData.message}
+        `,
+        html: `
+<h2>New Contact Form Submission</h2>
+<p><strong>Name:</strong> ${validatedData.name}</p>
+<p><strong>Email:</strong> ${validatedData.email}</p>
+<p><strong>Message:</strong> ${validatedData.message}</p>
+        `
+      });
+
       res.json(contact);
     } catch (error) {
       if (error instanceof ZodError) {
         res.status(400).json({ message: error.errors[0].message });
       } else {
+        console.error('Contact form error:', error);
         res.status(500).json({ message: "Failed to submit contact form" });
       }
     }
