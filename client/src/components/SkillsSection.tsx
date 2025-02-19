@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Code, Palette, TrendingUp, Clock } from "lucide-react";
 
+// Skills arranged in a 2x2 grid:
+// [Web Development] [Graphic Design]
+// [Digital Marketing] [Virtual Assistant]
 const skills = [
   {
     category: "Web Development",
