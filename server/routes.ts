@@ -13,7 +13,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Send email notification
       const emailResult = await sendEmail({
-        to: "test@example.com", // Using test email for verification
+        to: "karinlawrencebrown@gmail.com",
         subject: "Test Email - Contact Form Submission",
         text: `
 Test email - Contact form submission:

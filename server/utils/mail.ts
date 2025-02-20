@@ -45,7 +45,7 @@ export async function sendEmail(params: EmailParams): Promise<boolean> {
       Messages: [
         {
           From: {
-            Email: "contact@example.com",
+            Email: "karinlawrencebrown@gmail.com",
             Name: "Portfolio Contact Form"
           },
           To: [
