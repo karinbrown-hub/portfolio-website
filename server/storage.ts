@@ -135,6 +135,17 @@ export class MemStorage implements IStorage {
         }
       },
       {
+        title: "Brand Guidelines",
+        description: "Brand guidelines presentation",
+        category: "graphic-design",
+        embedUrl: "https://www.canva.com/design/DAGfV9Xpkww/2N6IP8-Q5ikWfvm5u_E1gw/view?embed",
+        details: {
+          tools: ["Canva"],
+          duration: "1 week",
+          deliverables: ["Presentation"]
+        }
+      },
+      {
         title: "Social Media Marketing Plan",
         description: "Social media marketing plan presentation",
         category: "digital-marketing",
