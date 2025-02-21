@@ -36,8 +36,19 @@ export class MemStorage implements IStorage {
         }
       },
       {
-        title: "Modern Fashion Product Instagram Post",
-        description: "Instagram post for a modern fashion product",
+        title: "Coming Soon Instagram Post",
+        description: "Coming soon announcement post",
+        category: "graphic-design",
+        embedUrl: "https://www.canva.com/design/DAGezti-ar8/n_se9eJBPka59SVwwt1kOQ/view?embed",
+        details: {
+          tools: ["Canva"],
+          duration: "1 week",
+          deliverables: ["Instagram Post"]
+        }
+      },
+      {
+        title: "Modern Fashion Product",
+        description: "Modern fashion product announcement post",
         category: "graphic-design",
         embedUrl: "https://www.canva.com/design/DAGezti-ar8/n_se9eJBPka59SVwwt1kOQ/view?embed",
         details: {
@@ -59,51 +70,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "T-Shirt Mockup Design 2",
-        description: "T-Shirt mockup design",
-        category: "graphic-design",
-        embedUrl: "https://www.canva.com/design/DAGftwXX24k/DxQZRpuu2QF28dwCzu53GA/view?embed",
-        details: {
-          tools: ["Canva"],
-          duration: "1 week",
-          deliverables: ["T-Shirt Design"]
-        }
-      },
-      {
-        title: "Stella Solutions Instagram Post",
-        description: "Instagram post for Stella Solutions",
-        category: "graphic-design",
-        embedUrl: "https://www.canva.com/design/DAGeza57pg0/mrQzHX6QQDajyFz6ATZcGw/view?embed",
-        details: {
-          tools: ["Canva"],
-          duration: "1 week",
-          deliverables: ["Instagram Post"]
-        }
-      },
-      {
-        title: "Modern Fashion Product Instagram Post",
-        description: "Instagram post for a modern fashion product",
-        category: "graphic-design",
-        embedUrl: "https://www.canva.com/design/DAGezti-ar8/n_se9eJBPka59SVwwt1kOQ/view?embed",
-        details: {
-          tools: ["Canva"],
-          duration: "1 week",
-          deliverables: ["Instagram Post"]
-        }
-      },
-      {
-        title: "T-Shirt Mockup Design 1",
-        description: "T-Shirt mockup design",
-        category: "graphic-design",
-        embedUrl: "https://www.canva.com/design/DAGft8vfHj8/S9g3INcNfrSTCYXarfkYwg/view?embed",
-        details: {
-          tools: ["Canva"],
-          duration: "1 week",
-          deliverables: ["T-Shirt Design"]
-        }
-      },
-      {
-        title: "T-Shirt Mockup Design 2",
-        description: "T-Shirt mockup design",
+        description: "T-Shirt mockup design variation",
         category: "graphic-design",
         embedUrl: "https://www.canva.com/design/DAGftwXX24k/DxQZRpuu2QF28dwCzu53GA/view?embed",
         details: {
@@ -114,7 +81,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Menu Infographic",
-        description: "Infographic for a menu",
+        description: "Infographic design for menu",
         category: "graphic-design",
         embedUrl: "https://www.canva.com/design/DAGfXNxC7lQ/ykvstvaTAhJHQV5g2GaoEA/view?embed",
         details: {
@@ -125,8 +92,8 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Stella Solutions Brochure",
-        description: "Brochure for Stella Solutions",
-        category: "digital-marketing",
+        description: "Trifold brochure for Stella Solutions",
+        category: "graphic-design",
         embedUrl: "https://www.canva.com/design/DAGezdLJ7aM/2KY7XDO42ohON27Ny9_bxg/view?embed",
         details: {
           tools: ["Canva"],
@@ -135,14 +102,47 @@ export class MemStorage implements IStorage {
         }
       },
       {
-        title: "Social Media Marketing Plan",
-        description: "Social media marketing plan presentation",
-        category: "digital-marketing",
-        embedUrl: "https://www.canva.com/design/DAGfXK4U_DA/XxTCM4o7TViA12DFCbePrQ/view?embed",
+        title: "Furaha Travel and Tour Brochure",
+        description: "A4 brochure for Furaha Travel and Tour",
+        category: "graphic-design",
+        embedUrl: "https://www.canva.com/design/DAGezMlJwSc/0gKBN-SQ8L8o3nVqzUkHyg/view?embed",
         details: {
           tools: ["Canva"],
-          duration: "1 month",
-          deliverables: ["Presentation"]
+          duration: "1 week",
+          deliverables: ["Brochure"]
+        }
+      },
+      {
+        title: "Synergy Logo",
+        description: "Logo design for Synergy",
+        category: "graphic-design",
+        embedUrl: "https://www.canva.com/design/DAGft_fDTR4/2gajDDQJ4BBZmrabul0dXg/view?embed",
+        details: {
+          tools: ["Canva"],
+          duration: "1 week",
+          deliverables: ["Logo"]
+        }
+      },
+      {
+        title: "Fusionist Logo",
+        description: "Logo design for Fusionist",
+        category: "graphic-design",
+        embedUrl: "https://www.canva.com/design/DAGft-B45Q4/uzx-4W6yIZZS0-449l6Orw/view?embed",
+        details: {
+          tools: ["Canva"],
+          duration: "1 week",
+          deliverables: ["Logo"]
+        }
+      },
+      {
+        title: "The Creative Hub Logo",
+        description: "Logo design for The Creative Hub",
+        category: "graphic-design",
+        embedUrl: "https://www.canva.com/design/DAGft-rzzDM/vbP3-AvNguxgcBAYzEzo3A/view?embed",
+        details: {
+          tools: ["Canva"],
+          duration: "1 week",
+          deliverables: ["Logo"]
         }
       },
       {
@@ -161,6 +161,17 @@ export class MemStorage implements IStorage {
         description: "Travel itinerary presentation",
         category: "virtual-assistance",
         embedUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSofcngmO4YIfjFxSiWctAMbN6GBXYppG-fNgXQ32A_tyRDKrbjwvkfDX2q-0zLksIUpfhRI2SaxVGV/embed?start=true&loop=true&delayms=3000",
+        details: {
+          tools: ["Google Slides"],
+          duration: "1 week",
+          deliverables: ["Presentation"]
+        }
+      },
+      {
+        title: "Social Media Marketing Plan",
+        description: "Social media marketing plan presentation",
+        category: "digital-marketing",
+        embedUrl: "https://www.canva.com/design/DAGfXK4U_DA/XxTCM4o7TViA12DFCbePrQ/view?embed",
         details: {
           tools: ["Canva"],
           duration: "1 month",
