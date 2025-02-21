@@ -70,4 +70,4 @@ export async function sendEmail(params: EmailParams): Promise<boolean> {
     console.error('Mailjet email error:', error);
     return false;
   }
-}
+}  /// 
