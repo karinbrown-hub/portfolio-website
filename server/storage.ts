@@ -1,3 +1,4 @@
+
 import { contacts, projects, type Contact, type InsertContact, type Project } from "@shared/schema";
 
 export interface IStorage {
@@ -18,33 +19,163 @@ export class MemStorage implements IStorage {
     this.projects = new Map();
     this.contactId = 1;
     this.projectId = 1;
-
-    // Initialize with sample projects
     this.initializeProjects();
   }
 
   private initializeProjects() {
     const sampleProjects: Omit<Project, "id">[] = [
       {
-        title: "Brand Identity Design",
-        description: "Complete brand redesign for a tech startup",
+        title: "Stella Solutions Instagram Post",
+        description: "Instagram post for Stella Solutions",
         category: "graphic-design",
-        imageUrl: "https://images.unsplash.com/photo-1541462608143-67571c6738dd",
+        imageUrl: "/assets/images/STELLA SOLUTIONS Digital Marketing Social Media and Instagram Post.png",
         details: {
-          tools: ["Adobe Illustrator", "Photoshop"],
-          duration: "2 months",
-          deliverables: ["Logo", "Brand Guidelines", "Marketing Materials"]
+          tools: ["Adobe Photoshop"],
+          duration: "1 week",
+          deliverables: ["Instagram Post"]
         }
       },
       {
-        title: "E-commerce Website",
-        description: "Full-stack e-commerce solution with modern UI",
-        category: "web-development",
-        imageUrl: "https://images.unsplash.com/photo-1661956602116-aa6865609028",
+        title: "Coming Soon Instagram Post",
+        description: "Instagram post for a coming soon announcement",
+        category: "graphic-design",
+        imageUrl: "/assets/images/_Coming Soon Instagram Post.png",
         details: {
-          tools: ["React", "Node.js", "PostgreSQL"],
-          duration: "3 months",
-          deliverables: ["Website", "Admin Dashboard", "API Documentation"]
+          tools: ["Adobe Photoshop"],
+          duration: "1 week",
+          deliverables: ["Instagram Post"]
+        }
+      },
+      {
+        title: "Modern Fashion Product Instagram Post",
+        description: "Instagram post for a modern fashion product",
+        category: "graphic-design",
+        imageUrl: "/assets/images/modern new fashion product Instagram Post.png",
+        details: {
+          tools: ["Adobe Photoshop"],
+          duration: "1 week",
+          deliverables: ["Instagram Post"]
+        }
+      },
+      {
+        title: "T-Shirt Mockup Design 1",
+        description: "T-Shirt mockup design",
+        category: "graphic-design",
+        imageUrl: "/assets/images/hakuna matata t-shirt mockup.png",
+        details: {
+          tools: ["Adobe Illustrator"],
+          duration: "1 week",
+          deliverables: ["T-Shirt Design"]
+        }
+      },
+      {
+        title: "T-Shirt Mockup Design 2",
+        description: "T-Shirt mockup design",
+        category: "graphic-design",
+        imageUrl: "/assets/images/You are enough t-shirt mockup.png",
+        details: {
+          tools: ["Adobe Illustrator"],
+          duration: "1 week",
+          deliverables: ["T-Shirt Design"]
+        }
+      },
+      {
+        title: "Menu Infographic",
+        description: "Infographic for a menu",
+        category: "graphic-design",
+        imageUrl: "/assets/pdfs/Menu infographic.pdf",
+        details: {
+          tools: ["Adobe InDesign"],
+          duration: "1 week",
+          deliverables: ["Infographic"]
+        }
+      },
+      {
+        title: "Stella Solutions Brochure",
+        description: "Brochure for Stella Solutions",
+        category: "graphic-design",
+        imageUrl: "/assets/pdfs/Stella Solutions Trifold Brochure.pdf",
+        details: {
+          tools: ["Adobe InDesign"],
+          duration: "1 week",
+          deliverables: ["Brochure"]
+        }
+      },
+      {
+        title: "Furaha Travel Tour Brochure",
+        description: "Brochure for Furaha Travel Tour",
+        category: "graphic-design",
+        imageUrl: "/assets/images/Furaha Travel And Tour A4 Brochure.png",
+        details: {
+          tools: ["Adobe InDesign"],
+          duration: "1 week",
+          deliverables: ["Brochure"]
+        }
+      },
+      {
+        title: "Synergy Logo",
+        description: "Logo design for Synergy",
+        category: "graphic-design",
+        imageUrl: "/assets/pdfs/synergylabsofficiallogo21080.1920.pdf",
+        details: {
+          tools: ["Adobe Illustrator"],
+          duration: "1 week",
+          deliverables: ["Logo"]
+        }
+      },
+      {
+        title: "Fusionist Logo",
+        description: "Logo design for Fusionist",
+        category: "graphic-design",
+        imageUrl: "/assets/pdfs/logoinfo..the fusionist.pdf",
+        details: {
+          tools: ["Adobe Illustrator"],
+          duration: "1 week",
+          deliverables: ["Logo"]
+        }
+      },
+      {
+        title: "Creative Hub Logo",
+        description: "Logo design for Creative Hub",
+        category: "graphic-design",
+        imageUrl: "/assets/pdfs/THECREATIVEHUB.pdf",
+        details: {
+          tools: ["Adobe Illustrator"],
+          duration: "1 week",
+          deliverables: ["Logo"]
+        }
+      },
+      {
+        title: "Social Media Marketing Plan",
+        description: "Social media marketing plan presentation",
+        category: "digital-marketing",
+        embedUrl: "https://www.canva.com/design/DAGfXK4U_DA/XxTCM4o7TViA12DFCbePrQ/view",
+        details: {
+          tools: ["Canva"],
+          duration: "1 month",
+          deliverables: ["Presentation"]
+        }
+      },
+      {
+        title: "Project Management Plan - Rossette",
+        description: "Project management plan presentation",
+        category: "virtual-assistance",
+        embedUrl: "https://www.canva.com/design/DAGfX83iwp8/dqvSxKL7NIpeTR37sREw0w/view",
+        details: {
+          tools: ["Canva"],
+          duration: "1 month",
+          deliverables: ["Presentation"]
+        }
+      },
+      {
+        title: "Travel Itinerary",
+        description: "Travel itinerary presentation",
+        category: "virtual-assistance",
+        embedUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSofcngmO4YIfjFxSiWctAMbN6GBXYppG-fNgXQ32A_tyRDKrbjwvkfDX2q-0zLksIUpfhRI2SaxVGV/embed?start=true&loop=true&delayms=3000",
+        details: {
+          tools: ["Canva"],
+          duration: "1 month",
+          deliverables: ["Presentation"]
         }
       }
     ];
