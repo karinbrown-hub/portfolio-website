@@ -24,6 +24,15 @@ export const insertProjectSchema = createInsertSchema(projects).omit({ id: true 
 
 export type InsertContact = z.infer<typeof insertContactSchema>;
 export type Contact = typeof contacts.$inferSelect;
+
+export interface ProjectDetails {
+  tools: string[];
+  duration: string;
+  deliverables: string[];
+}
+
+// Removed duplicate Project interface
+
 export type Project = typeof projects.$inferSelect;
 
 export const contactFormSchema = insertContactSchema.extend({

@@ -11,19 +11,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = contactFormSchema.parse(req.body);
       const contact = await storage.createContact(validatedData);
 
+      // Log the full contents of the contact form
+      console.log("Contact form submission:", JSON.stringify(validatedData, null, 2));
+
       // Send email notification
       const emailResult = await sendEmail({
         to: "karinlawrencebrown@gmail.com",
-        subject: "Test Email - Contact Form Submission",
+        subject: "Contact Form Submission",
         text: `
-Test email - Contact form submission:
+Contact form submission:
 
 Name: ${validatedData.name}
 Email: ${validatedData.email}
 Message: ${validatedData.message}
         `,
         html: `
-<h2>Test Email - Contact Form Submission</h2>
+<h2>Contact Form Submission</h2>
 <p><strong>Name:</strong> ${validatedData.name}</p>
 <p><strong>Email:</strong> ${validatedData.email}</p>
 <p><strong>Message:</strong> ${validatedData.message}</p>

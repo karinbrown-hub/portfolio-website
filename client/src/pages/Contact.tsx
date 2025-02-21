@@ -8,26 +8,26 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "contact@example.com",
-      href: "mailto:contact@example.com"
+      value: "karinlawrencebrown@gmail.com ",
+      href: "mailto:karinlawrencebrown@gmail.com "
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+254717445352",
+      href: "tel:+254717445352"
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
-      value: "linkedin.com/in/example",
-      href: "https://linkedin.com/in/example"
+      value: "linkedin.com/in/karin-lawrence-brown",
+      href: " www.linkedin.com/in/karin-lawrence-brown"
     },
     {
       icon: Github,
       title: "GitHub",
-      value: "github.com/example",
-      href: "https://github.com/example"
+      value: " github.com/karinbrown-hub,",
+      href: " https://github.com/karinbrown-hub,"
     }
   ];
 

@@ -1,10 +1,14 @@
 import Mailjet from 'node-mailjet';
 
+console.log("MAILJET_API_KEY:", process.env.MAILJET_API_KEY);
+
 if (!process.env.MAILJET_API_KEY) {
   throw new Error("MAILJET_API_KEY environment variable must be set");
 }
 
 const MAILJET_API_KEY = process.env.MAILJET_API_KEY.trim();
+
+
 console.log("Raw API key length:", MAILJET_API_KEY.length);
 console.log("Contains underscore:", MAILJET_API_KEY.includes('_'));
 console.log("First few chars:", MAILJET_API_KEY.substring(0, 5));
@@ -45,12 +49,12 @@ export async function sendEmail(params: EmailParams): Promise<boolean> {
       Messages: [
         {
           From: {
-            Email: "karinlawrencebrown@gmail.com",
+            Email: "alexanja464@gmail.com",
             Name: "Portfolio Contact Form"
           },
           To: [
             {
-              Email: params.to,
+              Email: "karinlawrencebrown@gmail.com",
             }
           ],
           Subject: params.subject,
