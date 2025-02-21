@@ -7,9 +7,10 @@ import type { Project } from "@shared/schema";
 
 const categories = [
   { id: "all", label: "All Projects" },
-  { id: "web-development", label: "Web Development" },
+  // { id: "web-development", label: "Web Development" }, // Commented out for future use
   { id: "graphic-design", label: "Graphic Design" },
   { id: "digital-marketing", label: "Digital Marketing" },
+  { id: "virtual-assistance", label: "Virtual Assistance" },
 ];
 
 export default function Portfolio() {
