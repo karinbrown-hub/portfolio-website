@@ -49,15 +49,10 @@ Message: ${validatedData.message}
   app.get("/api/projects", async (req, res) => {
     try {
       const category = req.query.category as string | undefined;
-      if (category === 'all' || !category) {
-        const projects = await storage.getProjects();
-        res.json(projects);
-      } else if (['graphic-design', 'virtual-assistance', 'digital-marketing'].includes(category)) {
-        const projects = await storage.getProjectsByCategory(category);
-        res.json(projects);
-      } else {
-        res.status(400).json({ message: "Invalid category" });
-      }
+      const projects = category 
+        ? await storage.getProjectsByCategory(category)
+        : await storage.getProjects();
+      res.json(projects);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch projects" });
     }
