@@ -39,7 +39,7 @@ export class MemStorage implements IStorage {
         title: "Coming Soon Instagram Post",
         description: "Coming soon announcement post",
         category: "graphic-design",
-        embedUrl: "https://www.canva.com/design/DAGezti-ar8/n_se9eJBPka59SVwwt1kOQ/view?embed",
+        embedUrl: "https://www.canva.com/design/DAGezW1a_v0/0RgATBKDT0sf1W0JIs50hg/view?embed",
         details: {
           tools: ["Canva"],
           duration: "1 week",
