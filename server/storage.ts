@@ -177,6 +177,17 @@ export class MemStorage implements IStorage {
           duration: "1 month",
           deliverables: ["Presentation"]
         }
+      },
+      {
+        title: "Brand Guidelines",
+        description: "Synergy Labs brand guidelines",
+        category: "graphic-design",
+        embedUrl: "https://www.canva.com/design/DAGfV9Xpkww/2N6IP8-Q5ikWfvm5u_E1gw/view?embed",
+        details: {
+          tools: ["Canva"],
+          duration: "2 weeks",
+          deliverables: ["Brand Guidelines"]
+        }
       }
     ];
 
