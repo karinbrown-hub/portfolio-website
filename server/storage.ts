@@ -50,7 +50,7 @@ export class MemStorage implements IStorage {
         title: "Modern Fashion Product Instagram Post",
         description: "Instagram post for a modern fashion product",
         category: "graphic-design",
-        imageUrl: "/assets/images/modern new fashion product Instagram Post.png",
+        imageUrl: "/assets/images/modern new fashion product announcement instagram post.png",
         details: {
           tools: ["Adobe Photoshop"],
           duration: "1 week",
@@ -61,7 +61,7 @@ export class MemStorage implements IStorage {
         title: "T-Shirt Mockup Design 1",
         description: "T-Shirt mockup design",
         category: "graphic-design",
-        imageUrl: "/assets/images/hakuna matata t-shirt mockup.png",
+        imageUrl: "/assets/images/hakuna matata tshirt.png",
         details: {
           tools: ["Adobe Illustrator"],
           duration: "1 week",
@@ -72,7 +72,7 @@ export class MemStorage implements IStorage {
         title: "T-Shirt Mockup Design 2",
         description: "T-Shirt mockup design",
         category: "graphic-design",
-        imageUrl: "/assets/images/You are enough t-shirt mockup.png",
+        imageUrl: "/assets/images/You are enough tshirt.png",
         details: {
           tools: ["Adobe Illustrator"],
           duration: "1 week",
@@ -83,7 +83,7 @@ export class MemStorage implements IStorage {
         title: "Menu Infographic",
         description: "Infographic for a menu",
         category: "graphic-design",
-        imageUrl: "/assets/pdfs/Menu infographic.pdf",
+        imageUrl: "/assets/pdfs/Menu Infographic.pdf",
         details: {
           tools: ["Adobe InDesign"],
           duration: "1 week",
