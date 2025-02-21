@@ -58,7 +58,7 @@ export class MemStorage implements IStorage {
         }
       },
       {
-        title: "T-Shirt Mockup Design 1",
+        title: "T-Shirt Mockup Design Hakuna Matata",
         description: "T-Shirt mockup design",
         category: "graphic-design",
         imageUrl: "/assets/images/hakuna matata tshirt.png",
@@ -69,7 +69,7 @@ export class MemStorage implements IStorage {
         }
       },
       {
-        title: "T-Shirt Mockup Design 2",
+        title: "T-Shirt Mockup Design You are enough",
         description: "T-Shirt mockup design",
         category: "graphic-design",
         imageUrl: "/assets/images/You are enough tshirt.png",
