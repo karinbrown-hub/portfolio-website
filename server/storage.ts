@@ -149,7 +149,7 @@ export class MemStorage implements IStorage {
         title: "Social Media Marketing Plan",
         description: "Social media marketing plan presentation",
         category: "digital-marketing",
-        embedUrl: "https://www.canva.com/design/DAGfXK4U_DA/XxTCM4o7TViA12DFCbePrQ/view",
+        embedUrl: "https://www.canva.com/design/DAGfXK4U_DA/XxTCM4o7TViA12DFCbePrQ/view?embed",
         details: {
           tools: ["Canva"],
           duration: "1 month",
@@ -160,7 +160,7 @@ export class MemStorage implements IStorage {
         title: "Project Management Plan - Rossette",
         description: "Project management plan presentation",
         category: "virtual-assistance",
-        embedUrl: "https://www.canva.com/design/DAGfX83iwp8/dqvSxKL7NIpeTR37sREw0w/view",
+        embedUrl: "https://www.canva.com/design/DAGfX83iwp8/dqvSxKL7NIpeTR37sREw0w/view?embed",
         details: {
           tools: ["Canva"],
           duration: "1 month",
@@ -182,7 +182,7 @@ export class MemStorage implements IStorage {
         title: "Brand Guidelines",
         description: "Brand guidelines presentation",
         category: "graphic-design",
-        embedUrl: "https://www.canva.com/design/DAGfV9Xpkww/2N6IP8-Q5ikWfvm5u_E1gw/view",
+        embedUrl: "https://www.canva.com/design/DAGfV9Xpkww/2N6IP8-Q5ikWfvm5u_E1gw/view?embed",
         details: {
           tools: ["Canva"],
           duration: "1 week",
