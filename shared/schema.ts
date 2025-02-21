@@ -14,7 +14,6 @@ export const projects = pgTable("projects", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
   description: text("description").notNull(),
-  category: text("category").notNull(),
   imageUrl: text("image_url").notNull(),
   details: jsonb("details").notNull(),
 });
@@ -24,7 +23,17 @@ export const insertProjectSchema = createInsertSchema(projects).omit({ id: true 
 
 export type InsertContact = z.infer<typeof insertContactSchema>;
 export type Contact = typeof contacts.$inferSelect;
-export type Project = typeof projects.$inferSelect;
+export type Project = {
+  id: number;
+  title: string;
+  description: string;
+  embedUrl: string;
+  details: {
+    tools: string[];
+    duration: string;
+    deliverables: string[];
+  };
+};
 
 export const contactFormSchema = insertContactSchema.extend({
   email: z.string().email("Please enter a valid email address"),

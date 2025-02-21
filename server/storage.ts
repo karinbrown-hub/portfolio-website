@@ -1,11 +1,9 @@
-
 import { contacts, projects, type Contact, type InsertContact, type Project } from "@shared/schema";
 
 export interface IStorage {
   createContact(contact: InsertContact): Promise<Contact>;
   getProjects(): Promise<Project[]>;
   getProjectById(id: number): Promise<Project | undefined>;
-  getProjectsByCategory(category: string): Promise<Project[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -27,7 +25,6 @@ export class MemStorage implements IStorage {
       {
         title: "Stella Solutions Instagram Post",
         description: "Instagram post for Stella Solutions",
-        category: "graphic-design",
         embedUrl: "https://www.canva.com/design/DAGeza57pg0/mrQzHX6QQDajyFz6ATZcGw/view?embed",
         details: {
           tools: ["Canva"],
@@ -37,8 +34,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Modern Fashion Product Instagram Post",
-        description: "Instagram post for a modern fashion product",
-        category: "graphic-design",
+        description: "Modern new fashion product announcement instagram post",
         embedUrl: "https://www.canva.com/design/DAGezti-ar8/n_se9eJBPka59SVwwt1kOQ/view?embed",
         details: {
           tools: ["Canva"],
@@ -49,7 +45,6 @@ export class MemStorage implements IStorage {
       {
         title: "T-Shirt Mockup Design 1",
         description: "T-Shirt mockup design",
-        category: "graphic-design",
         embedUrl: "https://www.canva.com/design/DAGft8vfHj8/S9g3INcNfrSTCYXarfkYwg/view?embed",
         details: {
           tools: ["Canva"],
@@ -60,51 +55,6 @@ export class MemStorage implements IStorage {
       {
         title: "T-Shirt Mockup Design 2",
         description: "T-Shirt mockup design",
-        category: "graphic-design",
-        embedUrl: "https://www.canva.com/design/DAGftwXX24k/DxQZRpuu2QF28dwCzu53GA/view?embed",
-        details: {
-          tools: ["Canva"],
-          duration: "1 week",
-          deliverables: ["T-Shirt Design"]
-        }
-      },
-      {
-        title: "Stella Solutions Instagram Post",
-        description: "Instagram post for Stella Solutions",
-        category: "graphic-design",
-        embedUrl: "https://www.canva.com/design/DAGeza57pg0/mrQzHX6QQDajyFz6ATZcGw/view?embed",
-        details: {
-          tools: ["Canva"],
-          duration: "1 week",
-          deliverables: ["Instagram Post"]
-        }
-      },
-      {
-        title: "Modern Fashion Product Instagram Post",
-        description: "Instagram post for a modern fashion product",
-        category: "graphic-design",
-        embedUrl: "https://www.canva.com/design/DAGezti-ar8/n_se9eJBPka59SVwwt1kOQ/view?embed",
-        details: {
-          tools: ["Canva"],
-          duration: "1 week",
-          deliverables: ["Instagram Post"]
-        }
-      },
-      {
-        title: "T-Shirt Mockup Design 1",
-        description: "T-Shirt mockup design",
-        category: "graphic-design",
-        embedUrl: "https://www.canva.com/design/DAGft8vfHj8/S9g3INcNfrSTCYXarfkYwg/view?embed",
-        details: {
-          tools: ["Canva"],
-          duration: "1 week",
-          deliverables: ["T-Shirt Design"]
-        }
-      },
-      {
-        title: "T-Shirt Mockup Design 2",
-        description: "T-Shirt mockup design",
-        category: "graphic-design",
         embedUrl: "https://www.canva.com/design/DAGftwXX24k/DxQZRpuu2QF28dwCzu53GA/view?embed",
         details: {
           tools: ["Canva"],
@@ -114,8 +64,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Menu Infographic",
-        description: "Infographic for a menu",
-        category: "graphic-design",
+        description: "Menu infographic design",
         embedUrl: "https://www.canva.com/design/DAGfXNxC7lQ/ykvstvaTAhJHQV5g2GaoEA/view?embed",
         details: {
           tools: ["Canva"],
@@ -125,8 +74,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Stella Solutions Brochure",
-        description: "Brochure for Stella Solutions",
-        category: "digital-marketing",
+        description: "Stella Solutions Trifold Brochure",
         embedUrl: "https://www.canva.com/design/DAGezdLJ7aM/2KY7XDO42ohON27Ny9_bxg/view?embed",
         details: {
           tools: ["Canva"],
@@ -135,36 +83,43 @@ export class MemStorage implements IStorage {
         }
       },
       {
-        title: "Social Media Marketing Plan",
-        description: "Social media marketing plan presentation",
-        category: "digital-marketing",
-        embedUrl: "https://www.canva.com/design/DAGfXK4U_DA/XxTCM4o7TViA12DFCbePrQ/view?embed",
+        title: "Furaha Travel and Tour Brochure",
+        description: "Furaha Travel And Tour A4 Brochure",
+        embedUrl: "https://www.canva.com/design/DAGezMlJwSc/0gKBN-SQ8L8o3nVqzUkHyg/view?embed",
         details: {
           tools: ["Canva"],
-          duration: "1 month",
-          deliverables: ["Presentation"]
+          duration: "1 week",
+          deliverables: ["Brochure"]
         }
       },
       {
-        title: "Project Management Plan - Rossette",
-        description: "Project management plan presentation",
-        category: "virtual-assistance",
-        embedUrl: "https://www.canva.com/design/DAGfX83iwp8/dqvSxKL7NIpeTR37sREw0w/view?embed",
+        title: "Synergy Logo",
+        description: "Logo design for Synergy",
+        embedUrl: "https://www.canva.com/design/DAGft_fDTR4/2gajDDQJ4BBZmrabul0dXg/view?embed",
         details: {
           tools: ["Canva"],
-          duration: "1 month",
-          deliverables: ["Presentation"]
+          duration: "1 week",
+          deliverables: ["Logo"]
         }
       },
       {
-        title: "Travel Itinerary",
-        description: "Travel itinerary presentation",
-        category: "virtual-assistance",
-        embedUrl: "https://docs.google.com/presentation/d/e/2PACX-1vSofcngmO4YIfjFxSiWctAMbN6GBXYppG-fNgXQ32A_tyRDKrbjwvkfDX2q-0zLksIUpfhRI2SaxVGV/embed?start=true&loop=true&delayms=3000",
+        title: "Fusionist Logo",
+        description: "Logo design for Fusionist",
+        embedUrl: "https://www.canva.com/design/DAGft-B45Q4/uzx-4W6yIZZS0-449l6Orw/view?embed",
         details: {
           tools: ["Canva"],
-          duration: "1 month",
-          deliverables: ["Presentation"]
+          duration: "1 week",
+          deliverables: ["Logo"]
+        }
+      },
+      {
+        title: "The Creative Hub Logo",
+        description: "Logo design for The Creative Hub",
+        embedUrl: "https://www.canva.com/design/DAGft-rzzDM/vbP3-AvNguxgcBAYzEzo3A/view?embed",
+        details: {
+          tools: ["Canva"],
+          duration: "1 week",
+          deliverables: ["Logo"]
         }
       }
     ];
@@ -192,12 +147,6 @@ export class MemStorage implements IStorage {
 
   async getProjectById(id: number): Promise<Project | undefined> {
     return this.projects.get(id);
-  }
-
-  async getProjectsByCategory(category: string): Promise<Project[]> {
-    return Array.from(this.projects.values()).filter(
-      project => project.category === category
-    );
   }
 }
 
