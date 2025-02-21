@@ -5,9 +5,19 @@ import ProjectCard from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
 import type { Project } from "@shared/schema";
 
+const categories = [
+  { id: "all", label: "All Projects" },
+  // { id: "web-development", label: "Web Development" }, // Commented out for future use
+  { id: "graphic-design", label: "Graphic Design" },
+  { id: "digital-marketing", label: "Digital Marketing" },
+  { id: "virtual-assistance", label: "Virtual Assistance" },
+];
+
 export default function Portfolio() {
+  const [activeCategory, setActiveCategory] = useState("all");
+
   const { data: projects = [], isLoading } = useQuery<Project[]>({
-    queryKey: ["/api/projects"],
+    queryKey: ["/api/projects", activeCategory !== "all" ? activeCategory : undefined],
   });
 
   const container = {
@@ -34,7 +44,22 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          {categories.map((category) => (
+            <Button
+              key={category.id}
+              variant={activeCategory === category.id ? "default" : "outline"}
+              onClick={() => setActiveCategory(category.id)}
+            >
+              {category.label}
+            </Button>
+          ))}
+        </motion.div>
 
         {isLoading ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
