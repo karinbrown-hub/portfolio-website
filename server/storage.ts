@@ -28,20 +28,9 @@ export class MemStorage implements IStorage {
         title: "Stella Solutions Instagram Post",
         description: "Instagram post for Stella Solutions",
         category: "graphic-design",
-        imageUrl: "/assets/images/STELLA SOLUTIONS Digital Marketing Social Media and Instagram Post.png",
+        embedUrl: "https://www.canva.com/design/DAGeza57pg0/mrQzHX6QQDajyFz6ATZcGw/view?embed",
         details: {
-          tools: ["Adobe Photoshop"],
-          duration: "1 week",
-          deliverables: ["Instagram Post"]
-        }
-      },
-      {
-        title: "Coming Soon Instagram Post",
-        description: "Instagram post for a coming soon announcement",
-        category: "graphic-design",
-        imageUrl: "/assets/images/_Coming Soon Instagram Post.png",
-        details: {
-          tools: ["Adobe Photoshop"],
+          tools: ["Canva"],
           duration: "1 week",
           deliverables: ["Instagram Post"]
         }
@@ -50,31 +39,31 @@ export class MemStorage implements IStorage {
         title: "Modern Fashion Product Instagram Post",
         description: "Instagram post for a modern fashion product",
         category: "graphic-design",
-        imageUrl: "/assets/images/modern new fashion product announcement instagram post.png",
+        embedUrl: "https://www.canva.com/design/DAGezti-ar8/n_se9eJBPka59SVwwt1kOQ/view?embed",
         details: {
-          tools: ["Adobe Photoshop"],
+          tools: ["Canva"],
           duration: "1 week",
           deliverables: ["Instagram Post"]
         }
       },
       {
-        title: "T-Shirt Mockup Design Hakuna Matata",
+        title: "T-Shirt Mockup Design 1",
         description: "T-Shirt mockup design",
         category: "graphic-design",
-        imageUrl: "/assets/images/hakuna matata tshirt.png",
+        embedUrl: "https://www.canva.com/design/DAGft8vfHj8/S9g3INcNfrSTCYXarfkYwg/view?embed",
         details: {
-          tools: ["Adobe Illustrator"],
+          tools: ["Canva"],
           duration: "1 week",
           deliverables: ["T-Shirt Design"]
         }
       },
       {
-        title: "T-Shirt Mockup Design You are enough",
+        title: "T-Shirt Mockup Design 2",
         description: "T-Shirt mockup design",
         category: "graphic-design",
-        imageUrl: "/assets/images/You are enough tshirt.png",
+        embedUrl: "https://www.canva.com/design/DAGftwXX24k/DxQZRpuu2QF28dwCzu53GA/view?embed",
         details: {
-          tools: ["Adobe Illustrator"],
+          tools: ["Canva"],
           duration: "1 week",
           deliverables: ["T-Shirt Design"]
         }
@@ -83,9 +72,9 @@ export class MemStorage implements IStorage {
         title: "Menu Infographic",
         description: "Infographic for a menu",
         category: "graphic-design",
-        imageUrl: "/assets/pdfs/Menu Infographic.pdf",
+        embedUrl: "https://www.canva.com/design/DAGfXNxC7lQ/ykvstvaTAhJHQV5g2GaoEA/view?embed",
         details: {
-          tools: ["Adobe InDesign"],
+          tools: ["Canva"],
           duration: "1 week",
           deliverables: ["Infographic"]
         }
@@ -94,9 +83,9 @@ export class MemStorage implements IStorage {
         title: "Stella Solutions Brochure",
         description: "Brochure for Stella Solutions",
         category: "graphic-design",
-        imageUrl: "/assets/pdfs/Stella Solutions Trifold Brochure.pdf",
+        embedUrl: "https://www.canva.com/design/DAGezdLJ7aM/2KY7XDO42ohON27Ny9_bxg/view?embed",
         details: {
-          tools: ["Adobe InDesign"],
+          tools: ["Canva"],
           duration: "1 week",
           deliverables: ["Brochure"]
         }
@@ -105,9 +94,9 @@ export class MemStorage implements IStorage {
         title: "Furaha Travel Tour Brochure",
         description: "Brochure for Furaha Travel Tour",
         category: "graphic-design",
-        imageUrl: "/assets/images/Furaha Travel And Tour A4 Brochure.png",
+        embedUrl: "https://www.canva.com/design/DAGezMlJwSc/0gKBN-SQ8L8o3nVqzUkHyg/view?embed",
         details: {
-          tools: ["Adobe InDesign"],
+          tools: ["Canva"],
           duration: "1 week",
           deliverables: ["Brochure"]
         }
@@ -116,9 +105,9 @@ export class MemStorage implements IStorage {
         title: "Synergy Logo",
         description: "Logo design for Synergy",
         category: "graphic-design",
-        imageUrl: "/assets/pdfs/synergylabsofficiallogo21080.1920.pdf",
+        embedUrl: "https://www.canva.com/design/DAGft_fDTR4/2gajDDQJ4BBZmrabul0dXg/view?embed",
         details: {
-          tools: ["Adobe Illustrator"],
+          tools: ["Canva"],
           duration: "1 week",
           deliverables: ["Logo"]
         }
@@ -127,9 +116,9 @@ export class MemStorage implements IStorage {
         title: "Fusionist Logo",
         description: "Logo design for Fusionist",
         category: "graphic-design",
-        imageUrl: "/assets/pdfs/logoinfo..the fusionist.pdf",
+        embedUrl: "https://www.canva.com/design/DAGft-B45Q4/uzx-4W6yIZZS0-449l6Orw/view?embed",
         details: {
-          tools: ["Adobe Illustrator"],
+          tools: ["Canva"],
           duration: "1 week",
           deliverables: ["Logo"]
         }
@@ -138,9 +127,9 @@ export class MemStorage implements IStorage {
         title: "Creative Hub Logo",
         description: "Logo design for Creative Hub",
         category: "graphic-design",
-        imageUrl: "/assets/pdfs/THECREATIVEHUB.pdf",
+        embedUrl: "https://www.canva.com/design/DAGft-rzzDM/vbP3-AvNguxgcBAYzEzo3A/view?embed",
         details: {
-          tools: ["Adobe Illustrator"],
+          tools: ["Canva"],
           duration: "1 week",
           deliverables: ["Logo"]
         }
