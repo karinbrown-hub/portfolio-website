@@ -7,6 +7,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
 export default defineConfig({
   plugins: [
     react(),
@@ -28,9 +29,9 @@ export default defineConfig({
       "@shared": path.resolve(__dirname, "./shared"),
     },
   },
-  root: path.resolve(__dirname, "client"),
+  root: path.resolve(__dirname, "client"), // Set root to the client folder
   build: {
-    outDir: "docs",
+    outDir: path.resolve(__dirname, "dist"), // Output to the dist folder
     emptyOutDir: true,
   },
 });
