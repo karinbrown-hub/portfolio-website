@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useHashLocation } from "wouter"; // Added useHashLocation
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -15,7 +15,7 @@ function Router() {
     <div className="min-h-screen bg-background">
       <Navigation />
       <main>
-        <Switch>
+        <Switch hook={useHashLocation}> {/* Added hook={useHashLocation} */}
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/portfolio" component={Portfolio} />
