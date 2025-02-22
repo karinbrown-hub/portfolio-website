@@ -43,7 +43,11 @@ interface EmailParams {
 
 export async function sendEmail(params: EmailParams): Promise<boolean> {
   try {
-    console.log("Attempting to send email to:", params.to);
+    console.log("Sending email with params:", {
+      to: params.to,
+      subject: params.subject,
+      // Log other relevant details
+    });
 
     const result = await mailjet.post('send', { version: 'v3.1' }).request({
       Messages: [
@@ -64,10 +68,14 @@ export async function sendEmail(params: EmailParams): Promise<boolean> {
       ]
     });
 
-    console.log("Email sent successfully, status:", result.response.status);
+    console.log("Mailjet API Response:", result.response.data);
     return result.response.status === 200;
   } catch (error) {
-    console.error('Mailjet email error:', error);
+    console.error('Mailjet error details:', {
+      message: error.message,
+      statusCode: error.statusCode,
+      errorInfo: error.response?.data
+    });
     return false;
   }
 }  /// 

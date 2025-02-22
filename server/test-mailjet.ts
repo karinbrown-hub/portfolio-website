@@ -1,34 +1,26 @@
+import 'dotenv/config';  // This should match how your dev server loads env vars
 import { sendEmail } from "./utils/mail";
 
 async function testMailjet() {
-  console.log("Starting Mailjet test...");
-
-  // Test environment variable
-  const apiKey = process.env.MAILJET_API_KEY;
-  console.log("API Key exists:", !!apiKey);
-  if (apiKey) {
-    console.log("API Key format check:");
-    console.log("- Length:", apiKey.length);
-    console.log("- Contains underscore:", apiKey.includes('_'));
-    console.log("- First part length:", apiKey.split('_')[0]?.length);
-    console.log("- Second part length:", apiKey.split('_')[1]?.length);
-  }
+  // First verify the API key is loaded the same way as your dev server
+  console.log("MAILJET_API_KEY exists:", !!process.env.MAILJET_API_KEY);
+  console.log("API Key length:", process.env.MAILJET_API_KEY?.length || 0);
+  console.log("Contains underscore:", process.env.MAILJET_API_KEY?.includes('_'));
 
   try {
     const result = await sendEmail({
-      to: "test@example.com",
+      to: "alexanja464@gmail.com",
       subject: "Mailjet Test Email",
-      text: "This is a test email from Mailjet integration",
-      html: "<h1>Test Email</h1><p>This is a test email from Mailjet integration</p>"
+      text: "This is a test email sent at " + new Date().toISOString(),
+      html: `
+        <h2>Test Email</h2>
+        <p>This is a test email sent at ${new Date().toISOString()}</p>
+      `
     });
 
-    if (result) {
-      console.log("Test email sent successfully!");
-    } else {
-      console.log("Failed to send test email.");
-    }
+    console.log("Email send result:", result);
   } catch (error) {
-    console.error("Error during Mailjet test:", error);
+    console.error("Test failed:", error);
   }
 }
 
