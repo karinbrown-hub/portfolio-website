@@ -15,7 +15,7 @@ export const projects = pgTable("projects", {
   title: text("title").notNull(),
   description: text("description").notNull(),
   category: text("category").notNull(),
-  imageUrl: text("image_url").notNull(),
+  embedUrl: text("embed_url").notNull(),
   details: jsonb("details").notNull(),
 });
 
@@ -33,7 +33,9 @@ export interface ProjectDetails {
 
 // Removed duplicate Project interface
 
-export type Project = typeof projects.$inferSelect;
+export type Project = typeof projects.$inferSelect & {
+  details: ProjectDetails; // Explicitly define the structure of `details`
+};
 
 export const contactFormSchema = insertContactSchema.extend({
   email: z.string().email("Please enter a valid email address"),

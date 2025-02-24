@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,35 +15,6 @@ const item = {
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const renderContent = () => {
-    if (project.embedUrl) {
-      return (
-        <iframe
-          src={project.embedUrl}
-          className="w-full aspect-video"
-          allowFullScreen
-        />
-      );
-    }
-    
-    if (project.imageUrl?.endsWith('.pdf')) {
-      return (
-        <iframe
-          src={project.imageUrl}
-          className="w-full aspect-video"
-        />
-      );
-    }
-
-    return (
-      <img
-        src={project.imageUrl}
-        alt={project.title}
-        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-      />
-    );
-  };
-
   return (
     <motion.div variants={item}>
       <Link href={`/portfolio/${project.id}`}>
@@ -52,7 +22,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <HoverCardTrigger asChild>
             <Card className="overflow-hidden cursor-pointer group">
               <div className="aspect-video overflow-hidden">
-                {renderContent()}
+                {project.embedUrl ? (
+                  <iframe
+                    src={project.embedUrl}
+                    className="w-full aspect-video"
+                    allowFullScreen
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-muted">
+                    <p className="text-muted-foreground">No preview available</p>
+                  </div>
+                )}
               </div>
               <CardContent className="pt-6">
                 <Badge className="mb-3">{project.category}</Badge>

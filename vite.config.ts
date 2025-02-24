@@ -29,9 +29,9 @@ export default defineConfig({
       "@shared": path.resolve(__dirname, "./shared"),
     },
   },
-  root: path.resolve(__dirname, "client"), // Set root to the client folder
+  root: path.resolve(__dirname), // Set root to the root directory
   build: {
-    outDir: path.resolve(__dirname, "dist"), // Output to the dist folder
+    outDir: path.resolve(__dirname, "dist"), // Output to the dist folder in the root directory
     emptyOutDir: true,
   },
 });
