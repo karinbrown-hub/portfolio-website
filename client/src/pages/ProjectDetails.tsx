@@ -1,19 +1,31 @@
-import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import { useParams } from "wouter";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import type { Project } from "@shared/schema";
 import { Link } from "wouter";
+import { getProjectById, Project } from "../designs"; // Import from designs.ts
 
 export default function ProjectDetails() {
   const { id } = useParams();
-  
-  const { data: project, isLoading } = useQuery<Project>({
-    queryKey: [`/api/projects/${id}`],
-  });
+  const [project, setProject] = useState<Project | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (id) {
+      getProjectById(parseInt(id))
+        .then((data) => {
+          setProject(data || null); // Set project to null if not found
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error loading project:", error);
+          setIsLoading(false);
+        });
+    }
+  }, [id]);
 
   if (isLoading) {
     return (
@@ -65,7 +77,7 @@ export default function ProjectDetails() {
 
           <div className="aspect-video mb-12 rounded-lg overflow-hidden">
             <img
-              src={project.imageUrl}
+              src={project.embedUrl}
               alt={project.title}
               className="w-full h-full object-cover"
             />

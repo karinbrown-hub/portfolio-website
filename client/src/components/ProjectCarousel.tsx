@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -6,13 +6,32 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import type { Project } from "@shared/schema";
 import ProjectCard from "./ProjectCard";
+import { getProjects } from "../designs"; // Import only getProjects from designs.ts
+import type { Project as SharedProject } from "@shared/schema"; // Import Project type from shared schema
+
+export type Project = SharedProject;
 
 export default function ProjectCarousel() {
-  const { data: projects = [], isLoading } = useQuery<Project[]>({
-    queryKey: ["/api/projects"],
-  });
+  const [projects, setProjects] = useState<Project[]>([]); // Use Project type from shared schema
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getProjects()
+      .then((data: Project[]) => {
+        // Ensure that embedUrl is set to null if it's undefined
+        const projectsWithCorrectEmbedUrl = data.map(project => ({
+          ...project,
+          embedUrl: project.embedUrl ?? null, // Convert undefined to null
+        }));
+        setProjects(projectsWithCorrectEmbedUrl);
+        setIsLoading(false);
+      })
+      .catch((error: Error) => {
+        console.error("Error loading projects:", error);
+        setIsLoading(false);
+      });
+  }, []);
 
   if (isLoading) {
     return (

@@ -1,14 +1,24 @@
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
-import type { Project } from "@shared/schema";
+import { getProjects, Project } from "../designs"; // Import from designs.ts
 
 export default function Portfolio() {
-  const { data: projects = [], isLoading } = useQuery<Project[]>({
-    queryKey: ["/api/projects"],
-  });
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getProjects()
+      .then((data) => {
+        setProjects(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error loading projects:", error);
+        setIsLoading(false);
+      });
+  }, []);
 
   const container = {
     hidden: { opacity: 0 },
@@ -34,8 +44,6 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        
-
         {isLoading ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3].map((i) => (
@@ -53,7 +61,7 @@ export default function Portfolio() {
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard key={project.id} project={{ ...project, embedUrl: project.embedUrl || '' }} />
             ))}
           </motion.div>
         )}
