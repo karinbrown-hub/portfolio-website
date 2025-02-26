@@ -23,11 +23,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Card className="overflow-hidden cursor-pointer group">
               <div className="aspect-video overflow-hidden">
                 {project.embedUrl ? (
-                  <iframe
-                    src={project.embedUrl}
-                    className="w-full aspect-video"
-                    allowFullScreen
-                  />
+                 <iframe
+                 src={project.embedUrl}
+                 title={project.title}  // Add a title for accessibility
+                 className="w-full aspect-video"
+                 allowFullScreen
+                 loading="lazy"  // Lazy load the iframe
+                 sandbox="allow-scripts allow-same-origin"  // Restrict iframe capabilities
+                 onError={(e) => {
+                   console.error("Failed to load iframe:", e);
+                   // Optionally, you can set a fallback state here
+                 }}
+               />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-muted">
                     <p className="text-muted-foreground">No preview available</p>
